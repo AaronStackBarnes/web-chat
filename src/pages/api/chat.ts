@@ -8,7 +8,8 @@ import { OpenAIEmbeddings } from "langchain/embeddings";
 import { OpenAI } from "langchain/llms";
 import { PromptTemplate } from "langchain/prompts";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { uuid } from "uuidv4";
+import { v4 as uuidv4 } from "uuid";
+
 import { summarizeLongDocument } from "./summarizer";
 
 import { ConversationLog } from "./conversationLog";
@@ -48,7 +49,7 @@ const handleRequest = async ({
 
   try {
     const channel = ably.channels.get(userId);
-    const interactionId = uuid();
+    const interactionId = uuidv4();
 
     // Retrieve the conversation log and save the user's prompt
     const conversationLog = new ConversationLog(userId);

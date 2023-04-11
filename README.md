@@ -1,4 +1,4 @@
-# Pinecone Chatbot Demo
+#Web Chatbot Demo
 
 To run this demo, you need to have:
 

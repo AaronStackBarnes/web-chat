@@ -139,7 +139,7 @@ export default function Home() {
               <ConversationHeader>
                 <ConversationHeader.Actions></ConversationHeader.Actions>
                 <ConversationHeader.Content
-                  userName="Web Chat Bot"
+                  userName="Web Chatbot"
                   info={statusMessage}
                 />
               </ConversationHeader>
@@ -147,7 +147,7 @@ export default function Home() {
               <MessageList
                 typingIndicator={
                   botIsTyping ? (
-                    <TypingIndicator content="Chat bot is typing" />
+                    <TypingIndicator content="Chatbot is typing" />
                   ) : null
                 }
               >

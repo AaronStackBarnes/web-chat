@@ -31,6 +31,7 @@ const ably = new Ably.Realtime({ key: process.env.ABLY_API_KEY });
 const handleRequest = async ({
   prompt,
   userId,
+  key,
 }: {
   prompt: string;
   userId: string;
@@ -239,7 +240,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { body } = req;
-  const { prompt, userId } = body;
-  await handleRequest({ prompt, userId });
+  const { prompt, userId, key } = body;
+  await handleRequest({ prompt, userId, key });
   res.status(200).json({ message: "started" });
 }
